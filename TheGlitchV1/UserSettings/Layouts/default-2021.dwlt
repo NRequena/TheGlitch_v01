@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Scene
+  m_Title: Project
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 87
+  controlID: 48
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 88
+  controlID: 102
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_Zoom: 2.200781
   m_ScrollPosition: {x: 0, y: 0}
   m_SelectedObject: {fileID: 0}
-  m_SelectedSpriteRectGUID: 33fe038ef7c7b434e9c6955f254b9ae0
+  m_SelectedSpriteRectGUID: 00000000000000000000000000000000
   m_LastUsedModuleTypeName: 
 --- !u!114 &14
 MonoBehaviour:
@@ -380,9 +380,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 14f5ffff
-      m_LastClickedID: -2796
-      m_ExpandedIDs: 24fbffff
+      m_SelectedIDs: cc990000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 3ebfffff52c0ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -488,21 +488,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Art/HLD Sprites
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
   m_StartGridSize: 64
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: G:\The Blue Hut\06_THEGLITCH\Unity\The_Glitch_v1\TheGlitch_v01\TheGlitchV1
+  m_LastProjectPath: C:\Users\nicoo\Desktop\The Blue Hut\03_THEGLITCH\Unity\TheGlitch_v01\TheGlitchV1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: e85e0000
     m_LastClickedID: 24296
-    m_ExpandedIDs: 000000000a6100000c6100000e610000
+    m_ExpandedIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -530,7 +530,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff000000000a6100000c6100000e610000
+    m_ExpandedIDs: ffffffff96990000ca990000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -927,7 +927,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: 0.7623122, y: 0.38912544, z: -0.013177718}
     speed: 2
-    m_Value: {x: 0.4815451, y: 0.58210105, z: -0.016979242}
+    m_Value: {x: 0.7623122, y: 0.38912544, z: -0.013177718}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -980,7 +980,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 8.067716
     speed: 2
-    m_Value: 8.447869
+    m_Value: 8.067716
   m_Ortho:
     m_Target: 1
     speed: 2
