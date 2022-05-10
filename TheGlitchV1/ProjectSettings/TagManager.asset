@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Ground
   - 
   - 
   - 
@@ -43,6 +43,12 @@ TagManager:
     locked: 0
   - name: BG
     uniqueID: 825004327
+    locked: 0
+  - name: Platforms
+    uniqueID: 3850703619
+    locked: 0
+  - name: Enemies
+    uniqueID: 755253835
     locked: 0
   - name: Player
     uniqueID: 782048371

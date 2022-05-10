@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e1d0bd02de0aa5d4baf5fdec15e0b20a
+guid: b231c6f6e65a4b74aa5c713fe1a848b4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -152,7 +152,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_0
+      name: GlitchCharacter_Jumping_0
       rect:
         serializedVersion: 2
         x: 0
@@ -166,14 +166,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b6036d6bb0bbb4448ad1fa0d799001c
-      internalID: -1179908868
+      spriteID: 8c8e1823105f125418258d5667b9ee2e
+      internalID: -1187377038
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_1
+      name: GlitchCharacter_Jumping_1
       rect:
         serializedVersion: 2
         x: 32
@@ -187,14 +187,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a99b91b2127a184fa5560222e9170dd
-      internalID: -1956856826
+      spriteID: 5c49f9ffc3cd4224e86e8fee9a35278a
+      internalID: -1636694654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_2
+      name: GlitchCharacter_Jumping_2
       rect:
         serializedVersion: 2
         x: 64
@@ -208,14 +208,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 366472caa0476d74292df0acce244216
-      internalID: 1758724243
+      spriteID: cfc519ae45ba5ec46b38187b670de6de
+      internalID: 1483635904
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_3
+      name: GlitchCharacter_Jumping_3
       rect:
         serializedVersion: 2
         x: 96
@@ -229,14 +229,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c62a626dc660c7047b9986e8010f0eac
-      internalID: 1923879339
+      spriteID: dbc90467ae9d2fb4bb553a0f4b97e43e
+      internalID: -642129464
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_4
+      name: GlitchCharacter_Jumping_4
       rect:
         serializedVersion: 2
         x: 128
@@ -250,14 +250,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c814080cfa983704ea34ee973e1d3294
-      internalID: -1691056506
+      spriteID: f21cd557230874949955bdaade9e6468
+      internalID: 2132321625
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_5
+      name: GlitchCharacter_Jumping_5
       rect:
         serializedVersion: 2
         x: 160
@@ -271,14 +271,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30b38bec3b578e04481184d39d371e4f
-      internalID: 360485209
+      spriteID: 23d75491bf258cb44849f1c5ee01b9de
+      internalID: -1666389749
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_6
+      name: GlitchCharacter_Jumping_6
       rect:
         serializedVersion: 2
         x: 192
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68d88c51e5f50f54a8807b1ee51809cd
-      internalID: -1193804468
+      spriteID: 1c95e4e277ff4334bad676c22db325b6
+      internalID: -955269929
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_7
+      name: GlitchCharacter_Jumping_7
       rect:
         serializedVersion: 2
         x: 224
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7d526bc17b47dae4d9085ff0361d2cc2
-      internalID: -406414306
+      spriteID: 0054b31da0f73df4dbaa5200b4000e76
+      internalID: 241382648
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_8
+      name: GlitchCharacter_Jumping_8
       rect:
         serializedVersion: 2
         x: 256
@@ -334,14 +334,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5557253a523702243aabe688543e14a4
-      internalID: -1591888674
+      spriteID: f90ad577a8ce4f34ab1469895e1caf88
+      internalID: -1774991338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Glitcher_Idle_Front_9
+      name: GlitchCharacter_Jumping_9
       rect:
         serializedVersion: 2
         x: 288
@@ -355,8 +355,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5d2dbc9d0fdfd74089a4c538d23cc03
-      internalID: -218338385
+      spriteID: 17e6561f83201034185e39053bc86a73
+      internalID: -787582221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlitchCharacter_Jumping_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbf0d228e168ec04ca1a154801401a6e
+      internalID: 1448492574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GlitchCharacter_Jumping_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6a754499885ec469d5702a69c3593e
+      internalID: 1783766812
       vertices: []
       indices: 
       edges: []
@@ -372,16 +414,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Glitcher_Idle_Front_7: -406414306
-      Glitcher_Idle_Front_9: -218338385
-      Glitcher_Idle_Front_0: -1179908868
-      Glitcher_Idle_Front_5: 360485209
-      Glitcher_Idle_Front_6: -1193804468
-      Glitcher_Idle_Front_1: -1956856826
-      Glitcher_Idle_Front_2: 1758724243
-      Glitcher_Idle_Front_8: -1591888674
-      Glitcher_Idle_Front_3: 1923879339
-      Glitcher_Idle_Front_4: -1691056506
+      GlitchCharacter_Jumping_7: 241382648
+      GlitchCharacter_Jumping_9: -787582221
+      GlitchCharacter_Jumping_6: -955269929
+      GlitchCharacter_Jumping_8: -1774991338
+      GlitchCharacter_Jumping_11: 1783766812
+      GlitchCharacter_Jumping_1: -1636694654
+      GlitchCharacter_Jumping_5: -1666389749
+      GlitchCharacter_Jumping_3: -642129464
+      GlitchCharacter_Jumping_10: 1448492574
+      GlitchCharacter_Jumping_0: -1187377038
+      GlitchCharacter_Jumping_2: 1483635904
+      GlitchCharacter_Jumping_4: 2132321625
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
