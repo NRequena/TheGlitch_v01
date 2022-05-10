@@ -18,15 +18,17 @@ public class PlayerMovement : MonoBehaviour
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();  
         myFeetCollider = GetComponent<Collider2D>();
+        myAnimator.SetBool("isJump", false);
+
     }
 
 
     void Update()
     {
         Run();
-        FlipSprite();
         Jump();
-   
+        FlipSprite();
+      
     }
 
 
@@ -49,16 +51,13 @@ public class PlayerMovement : MonoBehaviour
         bool playerHasHorizontalSpeed = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
         myAnimator.SetBool("isRunning", playerHasHorizontalSpeed);
 
-        bool playerHasVerticalSpeed = Mathf.Abs(myRigidBody.velocity.y) > Mathf.Epsilon;
-        myAnimator.SetBool("isJump", playerHasVerticalSpeed);
-
 
     }
 
     void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-        Debug.Log(moveInput);
+        
     } 
 
     void OnJump(InputValue value)
@@ -67,7 +66,19 @@ public class PlayerMovement : MonoBehaviour
         {
             myRigidBody.velocity += new Vector2(0f, jumpSpeed);
         } 
+
     }
 
-    
+    private void Jump()
+    {
+        if(myRigidBody.velocity.y > Mathf.Epsilon)
+        { myAnimator.SetBool("isJump", true); }
+        else if (myRigidBody.velocity.y == 0f)
+        {
+            myAnimator.SetBool("isJump", false);
+        }
+
+        
+
+    }
 }
