@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &74545407 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 74545407, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-  m_PrefabInstance: {fileID: 5183766210290887576}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &394554642
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,62 +531,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 74545407, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 74545407, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.56
-      objectReference: {fileID: 0}
-    - target: {fileID: 74545407, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 74545407, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 74545407, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 74545407, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5183766209862657320, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
       propertyPath: m_GravityScale
-      value: 10
+      value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 5183766209862657322, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: speed
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183766209862657322, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: dashSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183766209862657322, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: jumpPower
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183766209862657322, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: dashDuration
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183766209862657322, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: startDashTime
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183766209862657322, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: groundLayer.m_Bits
-      value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183766209862657322, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: groundCheckPosition
-      value: 
-      objectReference: {fileID: 74545407}
     - target: {fileID: 5183766209862657332, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
       propertyPath: m_Name
       value: Player

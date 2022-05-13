@@ -11,13 +11,24 @@ public class PlayerMovement : MonoBehaviour
 	public Transform groundCheckPosition;
 	public LayerMask groundLayer;
 	private bool isGrounded;
+
+	//jump
+	private bool canJump;
     private bool jumped;
 	public float jumpPower = 12f;
+	private int jumpCount;
+	public int maxJumps = 2;
+
+	//dash
 	public bool dash;
 	public float dashTime;
 	public float dashSpeed;
 	public float dashDuration;
-	public int numberOfDashes;
+	private bool canDash;
+	
+	
+
+
 
 
 	void Awake()
@@ -28,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start()
 	{
+		canDash = true;
 		
 	}
 
@@ -90,12 +102,16 @@ public class PlayerMovement : MonoBehaviour
 			{
 
 				jumped = false;
-
 				anim.SetBool("Jump", false);
 			}
 		}
 
 	}
+
+	// void CheckNumerOfJumps()
+    //{
+	//	if (!isGrounded)
+    //}
 
 	void PlayerJump()
 	{
@@ -105,37 +121,51 @@ public class PlayerMovement : MonoBehaviour
             {
 				jumped = true;
 				myBody.velocity = new Vector2(myBody.velocity.x, jumpPower);
-
 				anim.SetBool("Jump", true);
 			}
+            else
+            {
+				
+            }
 		}
 	}
 
 	public void BloodDash()
     {
-		while(numberOfDashes < 4) 
-		{ 
-		       
-			if (Input.GetKey(KeyCode.LeftShift))
-			{
-				dashTime += 1 * Time.deltaTime;
-				numberOfDashes++;
-				if (dashTime < dashDuration)
-				{
-					dash = true;
-					transform.Translate(dashSpeed * Time.fixedDeltaTime * Vector2.right * transform.localScale.x);
-				}
-				else
-				{
-					dash = false;
-				}
-			}
-			else
-			{
-				dash = false;
-				dashTime = 0f;
-			}
+
+	if (Input.GetKey(KeyCode.LeftShift))
+	{
+			
+			StartCoroutine(DashDelay());
+			
+	}
+	else
+	{
+      dash = false;
+      dashTime = 0f;
+	}
+
+    }
+
+	IEnumerator DashDelay()
+    {
+		
+		dashTime += 1 * Time.deltaTime;
+
+		if (dashTime < dashDuration && canDash)
+		{
+			dash = true;
+			transform.Translate(dashSpeed * Time.fixedDeltaTime * Vector2.right * transform.localScale.x);
+			yield return new WaitForSeconds(0.5f);
+			canDash = false;
+			yield return new WaitForSeconds(4f);
+			canDash = true;
 		}
+		else
+		{
+			dash = false;
+		}
+		
 	}
 
 } // class
