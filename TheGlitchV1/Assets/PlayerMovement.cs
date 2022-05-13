@@ -6,17 +6,19 @@ public class PlayerMovement : MonoBehaviour
 {
 
 	public float speed = 5f;
-
 	private Rigidbody2D myBody;
-	private Animator anim;
-
+    private Animator anim;
 	public Transform groundCheckPosition;
 	public LayerMask groundLayer;
-
 	private bool isGrounded;
-	private bool jumped;
-
+    private bool jumped;
 	public float jumpPower = 12f;
+	public bool dash;
+	public float dashTime;
+	public float dashSpeed;
+	public float dashDuration;
+	public int numberOfDashes;
+
 
 	void Awake()
 	{
@@ -26,19 +28,20 @@ public class PlayerMovement : MonoBehaviour
 
 	void Start()
 	{
-
+		
 	}
 
 	void Update()
 	{
-        CheckIfGrounded();
+		PlayerWalk();
+		BloodDash();
+		CheckIfGrounded();
 		PlayerJump();
 	}
 
 	void FixedUpdate()
 	{
 		
-		PlayerWalk();
 	}
 
 	void PlayerWalk()
@@ -104,6 +107,33 @@ public class PlayerMovement : MonoBehaviour
 				myBody.velocity = new Vector2(myBody.velocity.x, jumpPower);
 
 				anim.SetBool("Jump", true);
+			}
+		}
+	}
+
+	public void BloodDash()
+    {
+		while(numberOfDashes < 4) 
+		{ 
+		       
+			if (Input.GetKey(KeyCode.LeftShift))
+			{
+				dashTime += 1 * Time.deltaTime;
+				numberOfDashes++;
+				if (dashTime < dashDuration)
+				{
+					dash = true;
+					transform.Translate(dashSpeed * Time.fixedDeltaTime * Vector2.right * transform.localScale.x);
+				}
+				else
+				{
+					dash = false;
+				}
+			}
+			else
+			{
+				dash = false;
+				dashTime = 0f;
 			}
 		}
 	}
