@@ -8,16 +8,16 @@ public class PlayerMovement : MonoBehaviour
 	public float speed = 5f;
 	private Rigidbody2D myBody;
     private Animator anim;
-	public Transform groundCheckPosition;
+	public Transform groundCheck;
 	public LayerMask groundLayer;
 	private bool isGrounded;
+	public float checkRadius;
 
 	//jump
-	private bool canJump;
-    private bool jumped;
 	public float jumpPower = 12f;
-	private int jumpCount;
-	public int maxJumps = 2;
+	private int extraJumps;
+	public int extraJumpsValue = 2;
+	private bool jumped;
 
 	//dash
 	public bool dash;
@@ -40,8 +40,10 @@ public class PlayerMovement : MonoBehaviour
 	void Start()
 	{
 		canDash = true;
-		
+		extraJumps = extraJumpsValue;
+		jumped = false;
 	}
+
 
 	void Update()
 	{
@@ -93,41 +95,33 @@ public class PlayerMovement : MonoBehaviour
 
 	void CheckIfGrounded()
 	{
-		isGrounded = Physics2D.Raycast(groundCheckPosition.position, Vector2.down, 0.1f, groundLayer);
-
-		if (isGrounded)
-		{
-			// and we jumped before
-			if (jumped)
-			{
-
-				jumped = false;
-				anim.SetBool("Jump", false);
-			}
-		}
-
+		isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+	
 	}
-
-	// void CheckNumerOfJumps()
-    //{
-	//	if (!isGrounded)
-    //}
-
 	void PlayerJump()
 	{
-		if (isGrounded)
-		{
-			if (Input.GetKey (KeyCode.Space))
-            {
-				jumped = true;
-				myBody.velocity = new Vector2(myBody.velocity.x, jumpPower);
-				anim.SetBool("Jump", true);
+		if(isGrounded == true)
+        {
+			if(jumped)
+			{
+			jumped = false;
+			extraJumps = extraJumpsValue;
+			anim.SetBool("Jump", false);
 			}
-            else
-            {
-				
-            }
 		}
+
+        if(Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
+        {
+			jumped = true;
+			myBody.velocity = Vector2.up * jumpPower;
+			anim.SetBool("Jump", true);
+			extraJumps--;
+        }
+		else if (Input.GetKeyDown(KeyCode.Space) && extraJumps == 0 && isGrounded == true)	
+        {
+			myBody.velocity = Vector2.up * jumpPower;
+		}
+
 	}
 
 	public void BloodDash()
