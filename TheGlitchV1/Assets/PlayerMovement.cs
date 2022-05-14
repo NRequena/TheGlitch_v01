@@ -12,12 +12,16 @@ public class PlayerMovement : MonoBehaviour
 	public LayerMask groundLayer;
 	private bool isGrounded;
 	public float checkRadius;
+	public CapsuleCollider2D myCapsuleCollider;
 
 	//jump
 	public float jumpPower = 12f;
 	private int extraJumps;
 	public int extraJumpsValue = 2;
 	private bool jumped;
+	public float jumpStarTime;
+	private float jumpTime;
+	public float jumpRelease = -2f;
 
 	//dash
 	public bool dash;
@@ -26,38 +30,31 @@ public class PlayerMovement : MonoBehaviour
 	public float dashDuration;
 	private bool canDash;
 	
-	
-
-
-
-
 	void Awake()
 	{
         myBody = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
-	}
+		myCapsuleCollider = GetComponent<CapsuleCollider2D>();
 
+	}
 	void Start()
 	{
 		canDash = true;
 		extraJumps = extraJumpsValue;
 		jumped = false;
 	}
-
-
 	void Update()
 	{
 		PlayerWalk();
 		BloodDash();
 		CheckIfGrounded();
 		PlayerJump();
+		Crouch();
 	}
-
 	void FixedUpdate()
 	{
 		
 	}
-
 	void PlayerWalk()
 	{
 
@@ -85,14 +82,12 @@ public class PlayerMovement : MonoBehaviour
 		anim.SetInteger("Speed", Mathf.Abs((int)myBody.velocity.x));
 
 	}
-
 	void ChangeDirection(int direction)
 	{
 		Vector3 tempScale = transform.localScale;
 		tempScale.x = direction;
 		transform.localScale = tempScale;
 	}
-
 	void CheckIfGrounded()
 	{
 		isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
@@ -122,25 +117,32 @@ public class PlayerMovement : MonoBehaviour
 			myBody.velocity = Vector2.up * jumpPower;
 		}
 
-	}
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+			myBody.velocity = Vector2.up * jumpRelease;
+        }
 
+
+       
+
+	}
 	public void BloodDash()
     {
 
-	if (Input.GetKey(KeyCode.LeftShift))
-	{
+		if (Input.GetKey(KeyCode.LeftShift))
+		{
 			
 			StartCoroutine(DashDelay());
 			
-	}
-	else
-	{
-      dash = false;
-      dashTime = 0f;
-	}
+		}
+		else
+		{
+			
+			dash = false;
+			dashTime = 0f;
+		}
 
     }
-
 	IEnumerator DashDelay()
     {
 		
@@ -148,19 +150,39 @@ public class PlayerMovement : MonoBehaviour
 
 		if (dashTime < dashDuration && canDash)
 		{
+			anim.SetBool("Dash", true);
 			dash = true;
 			transform.Translate(dashSpeed * Time.fixedDeltaTime * Vector2.right * transform.localScale.x);
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.4f);
+			anim.SetBool("Dash", false);
 			canDash = false;
-			yield return new WaitForSeconds(4f);
+			yield return new WaitForSeconds(3f);
 			canDash = true;
 		}
 		else
 		{
+			
 			dash = false;
 		}
 		
 	}
+	public void Crouch()
+    {
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+			speed = 1f;
+			anim.SetBool("Crouch", true);
+			myCapsuleCollider.enabled = !myCapsuleCollider.enabled;
+			Debug.Log("Abajo");
+        }
+		else if (Input.GetKeyUp(KeyCode.DownArrow))
+        {
+			speed = 5f;
+			anim.SetBool("Crouch", false);
+			myCapsuleCollider.enabled = myCapsuleCollider.enabled;
+			Debug.Log("Arriba");
+		}
+    }
 
 } // class
 

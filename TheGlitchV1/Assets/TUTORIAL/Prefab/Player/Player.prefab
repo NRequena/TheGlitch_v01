@@ -45,6 +45,8 @@ GameObject:
   - component: {fileID: 5183766209862657321}
   - component: {fileID: 5183766209862657320}
   - component: {fileID: 5183766209862657322}
+  - component: {fileID: 1146137442}
+  - component: {fileID: 1146137448}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -153,7 +155,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05322981, y: 0.012673736}
+  m_Offset: {x: -0.063363075, y: -0.5212157}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -164,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7025671, y: 1.1746526}
+  m_Size: {x: 0.7093227, y: 0.13389534}
   m_EdgeRadius: 0
 --- !u!50 &5183766209862657320
 Rigidbody2D:
@@ -181,7 +183,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 6
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -200,12 +202,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  groundCheckPosition: {fileID: 74545407}
+  groundCheck: {fileID: 74545407}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
-  jumpPower: 20
+  checkRadius: 0.5
+  myCapsuleCollider: {fileID: 0}
+  jumpPower: 25
+  extraJumpsValue: 1
+  jumpStarTime: 0.25
+  jumpRelease: -2
   dash: 0
   dashTime: 0
   dashSpeed: 5
   dashDuration: 0.6
+--- !u!114 &1146137442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183766209862657332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d56bf031b074247bfd7f72bb1af516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 8
+  lowJumpMultiplier: 1
+--- !u!70 &1146137448
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183766209862657332}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.052383363, y: 0}
+  m_Size: {x: 0.71058214, y: 1.2}
+  m_Direction: 0
