@@ -1427,16 +1427,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 499475371, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 527392331}
     - target: {fileID: 5183766209862657322, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
       propertyPath: music
       value: 
       objectReference: {fileID: 527392331}
     - target: {fileID: 5183766209862657332, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5183766209862657332, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5183766209862657335, guid: 541067ed57b36af47bb78aa57ea08dc1, type: 3}

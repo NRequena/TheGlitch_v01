@@ -48,9 +48,10 @@ GameObject:
   - component: {fileID: 1146137442}
   - component: {fileID: 1146137448}
   - component: {fileID: 2106256576}
+  - component: {fileID: 499475371}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,12 +204,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  myBody: {fileID: 0}
   groundCheck: {fileID: 74545407}
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
   checkRadius: 0.5
   myCapsuleCollider: {fileID: 0}
+  music: {fileID: 0}
   jumpPower: 25
   extraJumpsValue: 1
   jumpStarTime: 0.25
@@ -260,3 +263,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeBend: 0.5
+--- !u!114 &499475371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183766209862657332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 708bb749c56b3104cb40999b278dafd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 5183766209862657322}
+  music: {fileID: 0}

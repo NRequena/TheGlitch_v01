@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
 	public float speed = 5f;
-	private Rigidbody2D myBody;
+	public Rigidbody2D myBody;
     private Animator anim;
 	public Transform groundCheck;
 	public LayerMask groundLayer;
@@ -52,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
 		CheckIfGrounded();
 		PlayerJump();
 		Crouch();
-		PlayMusic();
+		
 	}
 	void FixedUpdate()
 	{
@@ -187,36 +187,8 @@ public class PlayerMovement : MonoBehaviour
 		}
     }
 
-	public void PlayMusic()
-    {
-		if(myBody.velocity.x == 0 || myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
-        {
-			music.Pause();
-        }
-		else if(myBody.velocity.x > 0 && !myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
-        {
-			
-			music.UnPause();
-			music.pitch = 1;
-		}
-		else if(myBody.velocity.x < 0 && !myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
-        {
-			music.UnPause();
-			music.pitch = -1;
-		}
-		
-		if(music.time == 0)
-        {
-			if(myBody.velocity.x < 0)
-            {
-				music.Stop();
-            }
-			else if(myBody.velocity.x > 0)
-            {
-				music.Play();
-            }
-        }
-    }
+	
+   
 
 } // class
 
