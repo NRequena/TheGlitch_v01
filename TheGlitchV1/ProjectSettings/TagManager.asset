@@ -14,7 +14,7 @@ TagManager:
   - UI
   - Player
   - Ground
-  - 
+  - Platforms
   - 
   - 
   - 
@@ -44,6 +44,9 @@ TagManager:
     locked: 0
   - name: BG
     uniqueID: 825004327
+    locked: 0
+  - name: Interactable
+    uniqueID: 1945554841
     locked: 0
   - name: Platforms
     uniqueID: 3850703619
