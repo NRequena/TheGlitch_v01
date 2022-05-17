@@ -5,15 +5,22 @@ using UnityEngine;
 public class MusicSystem : MonoBehaviour
 {
     public PlayerMovement player;
-    public AudioSource music;
     public List<AudioSource> stems = new List<AudioSource>();
     public List<AudioSource> muteStems = new List<AudioSource>();
     public List<AudioSource> playStems = new List<AudioSource>();
 
+    private void Awake()
+    {
+        muteStems.AddRange(stems);
+        playStems.Add(muteStems[0]);
+        muteStems.Remove(muteStems[0]);
+
+    }
 
     void Start()
     {
-
+        MuteStems();
+        UnMuteStems();
     }
 
     void Update()
@@ -117,5 +124,20 @@ public class MusicSystem : MonoBehaviour
         }
     }
 
+    public void StemUP()
+    {
+        //Remove last element from the muteStems and add it to UnMunteStems
+    }
+    public void StemDOWN()
+    {
+        //Remove last element from the UnMuteStems and add it to MuteStems
+    }
+
+    public void StartUpStems()
+    {
+        muteStems.AddRange(stems);
+        playStems.Add(muteStems[0]);
+        muteStems.Remove(muteStems[0]);
+    }
 }
 

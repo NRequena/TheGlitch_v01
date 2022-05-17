@@ -20,8 +20,18 @@ public class BetterJump : MonoBehaviour
         
     }
 
+    private void FixedUpdate()
+    {
+        CoolJump();
+    }
+
     // Update is called once per frame
     void Update()
+    {
+        
+    }
+
+    public void CoolJump()
     {
         if (myBody.velocity.y < 0)
         {

@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         return transform.localScale.x > 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D coliision)
+    private void OnTriggerExit2D(Collider2D coliision)
     {
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidBody.velocity.x)), 1f);
       

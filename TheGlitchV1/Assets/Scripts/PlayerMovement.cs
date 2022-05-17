@@ -36,8 +36,6 @@ public class PlayerMovement : MonoBehaviour
         myBody = GetComponent<Rigidbody2D>();
 		anim = GetComponent<Animator>();
 		myCapsuleCollider = GetComponent<CapsuleCollider2D>();
-		music.Play();
-
 	}
 	void Start()
 	{
@@ -47,15 +45,15 @@ public class PlayerMovement : MonoBehaviour
 	}
 	void Update()
 	{
-		PlayerWalk();
-		BloodDash();
-		CheckIfGrounded();
 		PlayerJump();
+		CheckIfGrounded();
 		Crouch();
 		
 	}
 	void FixedUpdate()
 	{
+		PlayerWalk();
+		BloodDash();
 		
 	}
 	void PlayerWalk()
