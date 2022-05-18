@@ -11,16 +11,20 @@ public class MusicSystem : MonoBehaviour
 
     private void Awake()
     {
+        foreach(AudioSource source in stems)
+        {
+            source.volume = 0;
+        }
+
         muteStems.AddRange(stems);
-        playStems.Add(muteStems[0]);
-        muteStems.Remove(muteStems[0]);
+        playStems.Add(muteStems[muteStems.Count-1]);
+        muteStems.Remove(muteStems[muteStems.Count-1]);
 
     }
 
     void Start()
     {
-      
-       
+ 
     }
 
     void Update()
@@ -29,18 +33,19 @@ public class MusicSystem : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            Debug.Log(playStems[3]);
+            StemDOWN();
         }
 
-        if (Input.GetKeyDown(KeyCode.O))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-           
+            StemUP();
         }
+      
 
     }
     void PlayMusic()
     {
-        AudioSource[] stems = FindObjectsOfType<AudioSource>();
+      
         foreach (AudioSource a in stems)
         {
             if (player.myBody.velocity.x == 0 || player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
@@ -77,26 +82,18 @@ public class MusicSystem : MonoBehaviour
     public void MuteStems()
     
     {
-        AudioSource[] muteStems = FindObjectsOfType<AudioSource>();
+        
         foreach(AudioSource m in muteStems)
         { 
-            if(m.volume > 0f)
-            {
-                m.volume = 0f;
-            }
+            m.volume = 0f;
         }
     }
 
     public void UnMuteStems()
     {
-        AudioSource[] playStems = FindObjectsOfType<AudioSource>();
         foreach (AudioSource p in playStems)
-        {
-
-            if (p.volume == 0f)
-            {
-                p.volume = 1f;
-            }
+        { 
+            p.volume = 1;
         }
     }
 
@@ -105,8 +102,7 @@ public class MusicSystem : MonoBehaviour
         //Remove last element from the muteStems and add it to UnMunteStems
         playStems.Add(muteStems[muteStems.Count - 1]);
         muteStems.Remove(muteStems[muteStems.Count-1]);
-        UnMuteStems();
-        
+        UnMuteStems();  
     }
     public void StemDOWN()
     {
@@ -115,7 +111,5 @@ public class MusicSystem : MonoBehaviour
         playStems.RemoveAt(playStems.Count - 1);
         MuteStems();
     }
-
-    
 }
 
