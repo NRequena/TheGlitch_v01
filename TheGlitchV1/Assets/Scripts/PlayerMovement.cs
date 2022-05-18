@@ -21,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
 	public int extraJumpsValue = 2;
 	private bool jumped;
 	public float jumpStarTime;
-	private float jumpTime;
 	public float jumpRelease = -2f;
 
 	//dash
