@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 	public Transform groundCheck;
 	public LayerMask groundLayer;
+	public LayerMask platformLayer;
 	private bool isGrounded;
 	public float checkRadius;
 	public CapsuleCollider2D myCapsuleCollider;
@@ -46,42 +47,34 @@ public class PlayerMovement : MonoBehaviour
 	{
 		PlayerJump();
 		CheckIfGrounded();
-		Crouch();
-		
+		Crouch();		
 	}
 	void FixedUpdate()
 	{
 		PlayerWalk();
 		BloodDash();
-		
 	}
 	void PlayerWalk()
 	{
-
 		float h = Input.GetAxisRaw("Horizontal");
-
 		if (h > 0)
 		{
 			myBody.velocity = new Vector2(speed, myBody.velocity.y);
-
 			ChangeDirection(1);
-
 		}
 		else if (h < 0)
 		{
 			myBody.velocity = new Vector2(-speed, myBody.velocity.y);
-
 			ChangeDirection(-1);
-
 		}
 		else
 		{
 			myBody.velocity = new Vector2(0f, myBody.velocity.y);
 		}
-
 		anim.SetInteger("Speed", Mathf.Abs((int)myBody.velocity.x));
-
 	}
+
+
 	void ChangeDirection(int direction)
 	{
 		Vector3 tempScale = transform.localScale;
@@ -90,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 	}
 	void CheckIfGrounded()
 	{
-		isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
+		isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer) || Physics2D.OverlapCircle(groundCheck.position, checkRadius, platformLayer);
 	
 	}
 	void PlayerJump()
@@ -104,7 +97,6 @@ public class PlayerMovement : MonoBehaviour
 			anim.SetBool("Jump", false);
 			}
 		}
-
         if(Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)
         {
 			jumped = true;
@@ -116,38 +108,26 @@ public class PlayerMovement : MonoBehaviour
         {
 			myBody.velocity = Vector2.up * jumpPower;
 		}
-
         if (Input.GetKeyUp(KeyCode.Space))
         {
 			myBody.velocity = Vector2.up * jumpRelease;
         }
-
-
-       
-
 	}
 	public void BloodDash()
     {
-
 		if (Input.GetKey(KeyCode.LeftShift))
-		{
-			
-			StartCoroutine(DashDelay());
-			
+		{			
+			StartCoroutine(DashDelay());			
 		}
 		else
-		{
-			
+		{			
 			dash = false;
 			dashTime = 0f;
 		}
-
     }
 	IEnumerator DashDelay()
-    {
-		
+    {	
 		dashTime += 1 * Time.deltaTime;
-
 		if (dashTime < dashDuration && canDash)
 		{
 			anim.SetBool("Dash", true);
@@ -161,10 +141,8 @@ public class PlayerMovement : MonoBehaviour
 		}
 		else
 		{
-			
 			dash = false;
 		}
-		
 	}
 	public void Crouch()
     {
@@ -183,11 +161,7 @@ public class PlayerMovement : MonoBehaviour
 			Debug.Log("Arriba");
 		}
     }
-
-	
-   
-
-} // class
+} 
 
 
 

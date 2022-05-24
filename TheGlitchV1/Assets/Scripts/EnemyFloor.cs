@@ -6,8 +6,9 @@ public class EnemyFloor : MonoBehaviour
 {
     [SerializeField] float speed = 1f;
     private Rigidbody2D myRigidBody;
-    private BoxCollider2D myBoxCollider;
+    public BoxCollider2D myBoxCollider;
     public MusicSystem musicSystem;
+    public BoxCollider2D destroyCollider;
 
 
     // Start is called before the first frame update

@@ -45,19 +45,20 @@ public class MusicSystem : MonoBehaviour
     }
     void PlayMusic()
     {
+        
       
         foreach (AudioSource a in stems)
         {
-            if (player.myBody.velocity.x == 0 || player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
+            if (Input.GetAxisRaw("Horizontal") == 0 || player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
             {
                 a.Pause();
             }
-            else if (player.myBody.velocity.x > 0 && !player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
+            else if (Input.GetAxisRaw("Horizontal") > 0 && !player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
             {
                 a.UnPause();
                 a.pitch = 1;
             }
-            else if (player.myBody.velocity.x < 0 && !player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
+            else if (Input.GetAxisRaw("Horizontal") < 0 && !player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
             {
                 a.UnPause();
                 a.pitch = -1;
@@ -65,11 +66,11 @@ public class MusicSystem : MonoBehaviour
 
             if(a.time == 0)
             {
-                if(player.myBody.velocity.x < 0)
+                if(Input.GetAxisRaw("Horizontal") < 0)
                 {
                     a.Stop();
                 }
-                else if(player.myBody.velocity.x > 0)
+                else if(Input.GetAxisRaw("Horizontal") > 0)
                 {
                     a.Play();
                 }
