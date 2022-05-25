@@ -37,8 +37,9 @@ public class EnemyFloor : MonoBehaviour
         return transform.localScale.x > 0;
     }
 
-    private void OnTriggerEnter2D(Collider2D coliision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag != "Player")
         transform.localScale = new Vector2(-(Mathf.Sign(myRigidBody.velocity.x)), 1f);
 
     }
@@ -47,7 +48,11 @@ public class EnemyFloor : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            musicSystem.StemUP();
             Destroy(gameObject);
         }
     }
+
+    
+
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collectables : MonoBehaviour
 {
     public BoxCollider2D myCollider;
+    public MusicSystem myMusicSystem;
 
 
     void Start()
@@ -22,7 +23,9 @@ public class Collectables : MonoBehaviour
         if (Input.GetKey(KeyCode.E))
         {
             Debug.Log("Fun");
+            myMusicSystem.StemUP();
             Destroy(gameObject);
+
         }
     }
 }
