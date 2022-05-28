@@ -136,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
 			yield return new WaitForSeconds(0.4f);
 			anim.SetBool("Dash", false);
 			canDash = false;
-			yield return new WaitForSeconds(3f);
+			yield return new WaitForSeconds(10f);
 			canDash = true;
 		}
 		else
