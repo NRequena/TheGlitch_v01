@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Ground
   - Platforms
   - PostProcess
-  - 
+  - Bullet
   - 
   - 
   - 
@@ -56,6 +57,9 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 782048371
+    locked: 0
+  - name: Bullets
+    uniqueID: 3511202667
     locked: 0
   - name: Foreground
     uniqueID: 4268934565

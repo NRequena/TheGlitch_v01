@@ -148,14 +148,14 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-			speed = 1f;
+			speed = 2f;
 			anim.SetBool("Crouch", true);
 			myCapsuleCollider.enabled = !myCapsuleCollider.enabled;
 			Debug.Log("Abajo");
         }
 		else if (Input.GetKeyUp(KeyCode.DownArrow))
         {
-			speed = 5f;
+			speed = 10f;
 			anim.SetBool("Crouch", false);
 			myCapsuleCollider.enabled = myCapsuleCollider.enabled;
 			Debug.Log("Arriba");

@@ -8,13 +8,14 @@ public class StaticEnemies : MonoBehaviour
     private Rigidbody2D myRigidBody;
     public BoxCollider2D myBoxCollider;
     public MusicSystem musicSystem;
-    public CapsuleCollider2D capsuleCollider;
+    public PlayerMovement playerMovement;
+
     
     void Start()
     {
         myRigidBody = GetComponent<Rigidbody2D>(); 
         myBoxCollider = GetComponent<BoxCollider2D>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
+
 
     }
 
@@ -28,21 +29,24 @@ public class StaticEnemies : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("STEM DOWN!");
-            musicSystem.StemDOWN();
-
-            
+            if (playerMovement.dash)
+            {
+                Debug.Log("STEM UP!");
+                musicSystem.StemUP();
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("STEM DOWN!");
+                musicSystem.StemDOWN();
+            }
+        
         }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Bullet")
         {
             Debug.Log("STEM UP!");
             musicSystem.StemUP();
             Destroy(gameObject);
         }
     }
-
 }

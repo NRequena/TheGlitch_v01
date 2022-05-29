@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 2106256576}
   - component: {fileID: 499475371}
   - component: {fileID: 1486762343}
+  - component: {fileID: 4305188115431814518}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -113,7 +114,7 @@ SpriteRenderer:
   m_SortingLayerID: 782048371
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1706493920, guid: d4d76d3b312881b46a54a69527333bae, type: 3}
+  m_Sprite: {fileID: -920429278, guid: e618735971c664546a00b9eaf019766f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,7 +162,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9611111, y: 1.2}
+    oldSize: {x: 1.6, y: 1.6}
     newSize: {x: 0.9611111, y: 1.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -185,9 +186,9 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 6
+  m_GravityScale: 5
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -209,16 +210,19 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 128
+  platformLayer:
+    serializedVersion: 2
+    m_Bits: 0
   checkRadius: 0.5
   myCapsuleCollider: {fileID: 0}
   music: {fileID: 0}
-  jumpPower: 25
+  jumpPower: 15
   extraJumpsValue: 1
   jumpStarTime: 0.25
   jumpRelease: -0.1
   dash: 0
   dashTime: 0
-  dashSpeed: 3
+  dashSpeed: 15
   dashDuration: 0.3
 --- !u!70 &1146137448
 CapsuleCollider2D:
@@ -262,8 +266,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 5183766209862657322}
-  music: {fileID: 0}
   stems:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   muteStems: []
@@ -282,3 +290,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fallMultiplier: 3
   lowJumpMultiplier: 1
+--- !u!114 &4305188115431814518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5183766209862657332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c147df47aec7d124bbe25045daf14275, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHP: 0
+  myMusicSystem: {fileID: 0}
