@@ -7,6 +7,11 @@ TagManager:
   - Ground
   - Bullet
   - Enemy
+  - KillZone
+  - ShortNote
+  - LongNote
+  - SubHit
+  - Chords
   layers:
   - Default
   - TransparentFX
@@ -19,7 +24,7 @@ TagManager:
   - Platforms
   - PostProcess
   - Bullet
-  - 
+  - KillZone
   - 
   - 
   - 
