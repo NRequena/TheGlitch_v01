@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviour
     private void Start()
     {
         canSpawn = true;
+        spawnTime = 10f;
     }
 
     private void Update()

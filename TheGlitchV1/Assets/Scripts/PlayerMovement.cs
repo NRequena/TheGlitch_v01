@@ -83,7 +83,7 @@ public class PlayerMovement : MonoBehaviour
 				anim.SetBool("Jump", false);
 			}
 		}
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Jump"))
 		{
 			jumped = true;
 			myBody.velocity = Vector2.up * jumpPower;

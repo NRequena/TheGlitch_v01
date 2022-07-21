@@ -126,29 +126,46 @@ public class MusicSystem : MonoBehaviour
         MuteStems();
     }
 
+    //Plays random ShortNote
     public void PlayShortNote()
     {
         Debug.Log("Random Short Note");
-        shortNotes[Random.Range(0, shortNotes.Length)].Play();
-        
+
+        int random = Random.Range(0, shortNotes.Length);
+        shortNotes[random].volume = Random.Range(0.1f, 0.6f);
+        shortNotes[random].panStereo = Random.Range(-1.0f, 1.0f);
+        shortNotes[random].Play();
+
     }
 
+    //Plays random LongNote
     public void PlayLongNotes()
     {
         Debug.Log("Random Long Note");
-        //longNotes[Random.Range(0,longNotes.Length)].Play();
+        int random = Random.Range(0, longNotes.Length);
+        longNotes[random].volume = Random.Range(0.1f, 0.6f);
+        longNotes[random].panStereo = Random.Range(-1.0f, 1.0f);
+        longNotes[random].Play();
     }
 
+    //Plays random Chord
     public void PlayChords()
     {
         Debug.Log("Random Chord");
-        chords[Random.Range(0,chords.Length)].Play();
+        int random = Random.Range(0, chords.Length);
+        chords[random].volume = Random.Range(0.1f, 0.6f);
+        chords[random].panStereo = Random.Range(-1.0f, 1.0f);
+        chords[random].Play();
     }
 
+    //Plays random BassNote
     public void PlaySubHits()
     {
         Debug.Log("Random Hit");
-        subHits[Random.Range(0,subHits.Length)].Play();
+        int random = Random.Range(0, subHits.Length);
+        subHits[random].volume = Random.Range(0.1f, 0.6f);
+        subHits[random].panStereo = Random.Range(-1.0f, 1.0f);
+        subHits[random].Play();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
