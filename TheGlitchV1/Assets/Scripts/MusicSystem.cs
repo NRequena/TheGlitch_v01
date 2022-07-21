@@ -26,8 +26,8 @@ public class MusicSystem : MonoBehaviour
         }
 
         muteStems.AddRange(stems);
-        /*playStems.Add(muteStems[muteStems.Count-1]);
-        muteStems.Remove(muteStems[muteStems.Count-1]);*/
+        playStems.Add(muteStems[muteStems.Count-1]);
+        muteStems.Remove(muteStems[muteStems.Count-1]);
 
        
 
@@ -142,7 +142,7 @@ public class MusicSystem : MonoBehaviour
     public void PlayChords()
     {
         Debug.Log("Random Chord");
-        //chords[Random.Range(0,chords.Length)].Play();
+        chords[Random.Range(0,chords.Length)].Play();
     }
 
     public void PlaySubHits()
