@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
 	public float checkRadius;
 	public CapsuleCollider2D myCapsuleCollider;
 	public AudioSource music;
+	[SerializeField] AudioSource[] footStep;
 
 	//jump
 	public float jumpPower = 12f;
@@ -90,6 +92,22 @@ public class PlayerMovement : MonoBehaviour
 			anim.SetBool("Jump", true);
 		}
 	}
+
+	private void FootStep()
+    {
+		int random = Random.Range(0, footStep.Length);
+		footStep[random].pitch = Random.Range(0.8f, 1.2f);
+		footStep[random].Play();
+		Debug.Log("Pasito");
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "KillZone")
+        {
+			SceneManager.LoadScene("Tester");
+		}
+    }
 }
 
 

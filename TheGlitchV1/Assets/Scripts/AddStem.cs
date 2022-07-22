@@ -5,7 +5,7 @@ using UnityEngine;
 public class AddStem : MonoBehaviour
 {
     public MusicSystem myMusicSystem;
-    public AudioSource up;
+    public AudioSource[] up;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class AddStem : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            up.Play();
+            up[Random.Range(0,up.Length)].Play();
             myMusicSystem.StemUP();
             GameObject.Destroy(gameObject);
         }

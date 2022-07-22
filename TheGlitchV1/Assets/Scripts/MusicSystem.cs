@@ -13,6 +13,7 @@ public class MusicSystem : MonoBehaviour
     public AudioSource[] longNotes;
     public AudioSource[] chords;
     public AudioSource[] subHits;
+  
 
 
 
@@ -68,11 +69,13 @@ public class MusicSystem : MonoBehaviour
             }
             else if (Input.GetAxisRaw("Horizontal") > 0 && !player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
             {
+                
                 a.UnPause();
                 a.pitch = 1;
             }
             else if (Input.GetAxisRaw("Horizontal") < 0 && !player.myCapsuleCollider.IsTouchingLayers(LayerMask.GetMask("Platforms")))
             {
+                
                 a.UnPause();
                 a.pitch = -1;
             }
@@ -132,7 +135,7 @@ public class MusicSystem : MonoBehaviour
         Debug.Log("Random Short Note");
 
         int random = Random.Range(0, shortNotes.Length);
-        shortNotes[random].volume = Random.Range(0.1f, 0.6f);
+        shortNotes[random].volume = Random.Range(0.3f, 0.8f);
         shortNotes[random].panStereo = Random.Range(-1.0f, 1.0f);
         shortNotes[random].Play();
 
@@ -143,7 +146,7 @@ public class MusicSystem : MonoBehaviour
     {
         Debug.Log("Random Long Note");
         int random = Random.Range(0, longNotes.Length);
-        longNotes[random].volume = Random.Range(0.1f, 0.6f);
+        longNotes[random].volume = Random.Range(0.3f, 0.8f);
         longNotes[random].panStereo = Random.Range(-1.0f, 1.0f);
         longNotes[random].Play();
     }
@@ -153,7 +156,7 @@ public class MusicSystem : MonoBehaviour
     {
         Debug.Log("Random Chord");
         int random = Random.Range(0, chords.Length);
-        chords[random].volume = Random.Range(0.1f, 0.6f);
+        chords[random].volume = Random.Range(0.3f, 0.8f);
         chords[random].panStereo = Random.Range(-1.0f, 1.0f);
         chords[random].Play();
     }
@@ -163,7 +166,7 @@ public class MusicSystem : MonoBehaviour
     {
         Debug.Log("Random Hit");
         int random = Random.Range(0, subHits.Length);
-        subHits[random].volume = Random.Range(0.1f, 0.6f);
+        subHits[random].volume = Random.Range(0.3f, 0.8f);
         subHits[random].panStereo = Random.Range(-1.0f, 1.0f);
         subHits[random].Play();
     }

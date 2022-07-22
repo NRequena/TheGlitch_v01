@@ -72,8 +72,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 782048371
-  m_SortingLayer: 5
+  m_SortingLayerID: -444263677
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -1027591949, guid: 371ae70c27139f74ba623ffe8023802f, type: 3}
   m_Color: {r: 0.0047169924, g: 1, b: 0.10921864, a: 1}
@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMusicSystem: {fileID: 0}
-  up: {fileID: 0}
+  up:
+  - {fileID: 0}
 --- !u!61 &2430264277180035174
 BoxCollider2D:
   m_ObjectHideFlags: 0
