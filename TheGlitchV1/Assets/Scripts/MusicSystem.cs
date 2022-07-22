@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MusicSystem : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class MusicSystem : MonoBehaviour
     public AudioSource[] longNotes;
     public AudioSource[] chords;
     public AudioSource[] subHits;
+    [SerializeField] Image stemsFill;
+    float stemsFilling = 0;
   
 
 
@@ -117,6 +120,11 @@ public class MusicSystem : MonoBehaviour
     public void StemUP()
     {
         //Remove last element from the muteStems and add it to UnMunteStems
+        if(stemsFilling < 1f)
+        {
+            stemsFilling += 0.125f;
+            stemsFill.fillAmount = stemsFilling;
+        }
         playStems.Add(muteStems[muteStems.Count - 1]);
         muteStems.Remove(muteStems[muteStems.Count-1]);
         UnMuteStems();  
@@ -124,6 +132,11 @@ public class MusicSystem : MonoBehaviour
     public void StemDOWN()
     {
         //Remove last element from the UnMuteStems and add it to MuteStems
+        if (stemsFilling > 0f)
+        {
+            stemsFilling -= 0.125f;
+            stemsFill.fillAmount = stemsFilling;
+        }
         muteStems.Add(playStems[playStems.Count - 1]);
         playStems.RemoveAt(playStems.Count - 1);
         MuteStems();
