@@ -16,7 +16,9 @@ public class MusicSystem : MonoBehaviour
     public AudioSource[] subHits;
     [SerializeField] Image stemsFill;
     float stemsFilling = 0;
-  
+    public AudioSource[] up;
+    public AudioSource[] down;
+
 
 
 
@@ -48,12 +50,12 @@ public class MusicSystem : MonoBehaviour
     {
         PlayMusic();
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             StemDOWN();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             StemUP();
         }
@@ -120,7 +122,8 @@ public class MusicSystem : MonoBehaviour
     public void StemUP()
     {
         //Remove last element from the muteStems and add it to UnMunteStems
-        if(stemsFilling < 1f)
+        up[Random.Range(0, up.Length)].Play();
+        if (stemsFilling < 1f)
         {
             stemsFilling += 0.125f;
             stemsFill.fillAmount = stemsFilling;
@@ -132,6 +135,7 @@ public class MusicSystem : MonoBehaviour
     public void StemDOWN()
     {
         //Remove last element from the UnMuteStems and add it to MuteStems
+        down[Random.Range(0, down.Length)].Play();
         if (stemsFilling > 0f)
         {
             stemsFilling -= 0.125f;
@@ -148,7 +152,7 @@ public class MusicSystem : MonoBehaviour
         Debug.Log("Random Short Note");
 
         int random = Random.Range(0, shortNotes.Length);
-        shortNotes[random].volume = Random.Range(0.3f, 0.8f);
+        shortNotes[random].volume = Random.Range(0.5f, 0.85f);
         shortNotes[random].panStereo = Random.Range(-1.0f, 1.0f);
         shortNotes[random].Play();
 
@@ -159,7 +163,7 @@ public class MusicSystem : MonoBehaviour
     {
         Debug.Log("Random Long Note");
         int random = Random.Range(0, longNotes.Length);
-        longNotes[random].volume = Random.Range(0.3f, 0.8f);
+        longNotes[random].volume = Random.Range(0.5f, 0.85f);
         longNotes[random].panStereo = Random.Range(-1.0f, 1.0f);
         longNotes[random].Play();
     }
@@ -169,7 +173,7 @@ public class MusicSystem : MonoBehaviour
     {
         Debug.Log("Random Chord");
         int random = Random.Range(0, chords.Length);
-        chords[random].volume = Random.Range(0.3f, 0.8f);
+        chords[random].volume = Random.Range(0.5f, 0.85f);
         chords[random].panStereo = Random.Range(-1.0f, 1.0f);
         chords[random].Play();
     }
@@ -179,7 +183,7 @@ public class MusicSystem : MonoBehaviour
     {
         Debug.Log("Random Hit");
         int random = Random.Range(0, subHits.Length);
-        subHits[random].volume = Random.Range(0.3f, 0.8f);
+        subHits[random].volume = Random.Range(0.5f, 0.85f);
         subHits[random].panStereo = Random.Range(-1.0f, 1.0f);
         subHits[random].Play();
     }

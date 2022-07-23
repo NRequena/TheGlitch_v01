@@ -125,5 +125,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMusicSistem: {fileID: 0}
-  down:
-  - {fileID: 0}
+  down: []

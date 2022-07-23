@@ -6,7 +6,7 @@ public class StemDown : MonoBehaviour
 {
 
     public MusicSystem myMusicSistem;
-    public AudioSource[] down;
+    //public AudioSource[] down;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +23,7 @@ public class StemDown : MonoBehaviour
     {
         if(collision.tag == "Player")
         {
-            down[Random.Range(0,down.Length)].Play();
+            //down[Random.Range(0,down.Length)].Play();
             myMusicSistem.StemDOWN();
             GameObject.Destroy(gameObject);
         }

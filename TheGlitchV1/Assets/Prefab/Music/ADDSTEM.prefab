@@ -99,8 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMusicSystem: {fileID: 0}
-  up:
-  - {fileID: 0}
+  up: []
 --- !u!61 &2430264277180035174
 BoxCollider2D:
   m_ObjectHideFlags: 0

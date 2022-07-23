@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviour
 
     private void Update()
     {
-        spawnTime = Random.Range(0.1f, 0.5f);
+        spawnTime = Random.Range(0.1f, 0.3f);
         Spawn();
     }
 
